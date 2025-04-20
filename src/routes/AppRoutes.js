@@ -2,19 +2,16 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home/Home";
-import SignIn from "../pages/SignIn/SignIn"; // Correct import for SignIn
+import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/Signup/SignUp";
-import ForgotPassword from "../pages/ForgotPassword/ForgotPassword"; 
-import { Box } from "@mui/material";
-import ContactPage from "../pages/Contact/Contact"; 
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
+import ContactPage from "../pages/Contact/Contact";
 import BookAppointment from "../pages/BookAppointment/BookAppointment";
+import Departments from "../pages/Departments/Departments"; // Correct import for Departments
 
-// Placeholder components for other pages
-const Departments = () => <div>Departments Page</div>;
 const Doctors = () => <div>Doctors Page</div>;
 const Gallery = () => <div>Gallery Page</div>;
 const Blog = () => <div>Blog Page</div>;
-
 
 const AppRoutes = () => {
   return (
