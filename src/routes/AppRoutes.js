@@ -8,9 +8,11 @@ import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import ContactPage from "../pages/Contact/Contact";
 import BookAppointment from "../pages/BookAppointment/BookAppointment";
 import Departments from "../pages/Departments/Departments"; // Correct import for Departments
+import Doctors from "../pages/doctors/Doctor"; 
+import Gallery from "../pages/Gallery/Gallery"; // Correct import for Gallery
 
-const Doctors = () => <div>Doctors Page</div>;
-const Gallery = () => <div>Gallery Page</div>;
+
+
 const Blog = () => <div>Blog Page</div>;
 
 const AppRoutes = () => {
@@ -26,6 +28,9 @@ const AppRoutes = () => {
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/book-appointment" element={<BookAppointment />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/doctor/:id" element={<Doctors />} /> {/* Dynamic route for Doctor */}
+      <Route path="*" element={<div>404 Not Found</div>} /> {/* Fallback route for unmatched paths */}
+      <Route path = '/gallery' element = {<Gallery />} /> {/* Correct import for Gallery */}
     </Routes>
   );
 };

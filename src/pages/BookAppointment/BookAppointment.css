@@ -14,7 +14,29 @@
   backdrop-filter: blur(10px);
 } */
 
+/* Change text color for the menu */
+.menu {
+  color: #ffffff; /* Replace with your desired color */
+}
 
+.menu a {
+  color: #ffffff; /* Replace with your desired color */
+  text-decoration: none; /* Optional: Remove underline from links */
+}
+
+.menu a:hover {
+  color: #3dbbd4; /* Optional: Change color on hover */
+}
+
+.signs .auth-links a,
+.signs .appointment-link a {
+  color: #ffffff; /* Replace with your desired color */
+}
+
+.signs .auth-links a:hover,
+.signs .appointment-link a:hover {
+  color: #3dbbd4; /* Optional: Change color on hover */
+}
 
 .container {
   display: flex;

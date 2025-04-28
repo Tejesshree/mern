@@ -100,7 +100,7 @@
   
   
   .dropdown {
-    background-color: whitesmoke;
+    background-color:#194767;
     padding: 0.8em 0;
     position: absolute;
     display: none;
@@ -116,6 +116,7 @@
   
   .dropdown li {
     text-align: center;
+    color: #fff;
   }
   
   .dropdown li:hover {
@@ -135,6 +136,7 @@
     display: none;
     font-size: 24px;
     user-select: none;
+    color: white;
   }
   
   @media (max-width: 768px) {
@@ -152,7 +154,7 @@
     .menu {
       display: none;
       position: absolute;
-      background-color: whitesmoke;
+      background-color: #194767;
       right: 0;
       left: 0;
       text-align: center;
@@ -1471,4 +1473,106 @@
       text-indent: 0; /* Remove indentation */
     }
   }
+  .card {
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #f3f3f5, #9fc5d5); /* Linear gradient background */
+    color: #fff; /* Ensure text is visible on the gradient */
+    padding: 20px;
+  }
   
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    color: #3dbbd4;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+  
+  }
+  /* Gallery Carousel Styles */
+.gallery-carousel {
+  margin-top: 20px;
+  margin: auto; /* Center the carousel */
+  width: 80%; /* Full width */
+  max-width: 1200px; /* Limit the maximum width */
+  height: 50%; /* Fixed height for the gallery carousel */
+  align-items: center;
+  overflow: hidden; /* Prevent content overflow */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better appearance */
+}
+
+.gallery-carousel .carousel-inner img {
+  width: 100%; /* Ensure images fill the carousel width */
+  height: 50%; /* Ensure images fill the carousel height */
+  object-fit: cover; /* Maintain aspect ratio and crop excess */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.gallery-carousel .carousel-caption h5 {
+  color: #062d6c;
+  font-weight: bold;
+  
+}
+
+.gallery-carousel .carousel-caption p {
+  color: #446fb4;
+  
+}
+
+/* Carousel Controls */
+.gallery-carousel .carousel-control-prev-icon,
+.gallery-carousel .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+  border-radius: 50%; /* Make the controls circular */
+  padding: 10px; /* Add padding for better appearance */
+}
+
+.gallery-carousel .carousel-control-prev-icon:hover,
+.gallery-carousel .carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .gallery-carousel {
+    height: 300px; /* Reduce height for tablets */
+  }
+
+  .gallery-carousel .carousel-inner img {
+    height: 300px; /* Match the carousel height */
+  }
+
+  .gallery-carousel .carousel-caption h5 {
+    font-size: 18px; /* Reduce font size for captions */
+  }
+
+  .gallery-carousel .carousel-caption p {
+    font-size: 14px; /* Reduce font size for captions */
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-carousel {
+    height: 250px; /* Further reduce height for smaller screens */
+  }
+
+  .gallery-carousel .carousel-inner img {
+    height: 250px; /* Match the carousel height */
+  }
+
+  .gallery-carousel .carousel-caption h5 {
+    font-size: 16px; /* Further reduce font size for captions */
+  }
+
+  .gallery-carousel .carousel-caption p {
+    font-size: 12px; /* Further reduce font size for captions */
+  }
+}

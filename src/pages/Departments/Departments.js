@@ -1,84 +1,152 @@
-import React, { useState, useEffect } from "react";
-import "./Departments.css";
+import React from 'react';
+import { Container, Grid } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import logo from '../../assets/img/logo.webp';
+import emergencyMedicineImage from '../../assets/img/emergency_medicine.jpg';
+import cardiologyImage from '../../assets/img/cardiology.jpg';
+import neurologyImage from '../../assets/img/neuro.jpg';
+import orthopedicsImage from '../../assets/img/ortho.jpg';
+import pediatricsImage from '../../assets/img/pedi.jpg';
+import gynecologyImage from '../../assets/img/gyn.jpg';
+import oncologyImage from '../../assets/img/onc.jpg';
+import generalSurgeryImage from '../../assets/img/gensur.jpg';
+import './Departments.css'; 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "animate.css";
+import "boxicons/css/boxicons.min.css";
+import "remixicon/fonts/remixicon.css";
+import "swiper/css";
 
-const Departments = () => {
-  const [departments, setDepartments] = useState([]);
-
-  useEffect(() => {
-    const deptData = [
-      {
-        name: "Cardiology",
-        img: "https://via.placeholder.com/300x200?text=Cardiology",
-        desc: "Specializes in diagnosing and treating heart conditions."
-      },
-      {
-        name: "Neurology",
-        img: "https://via.placeholder.com/300x200?text=Neurology",
-        desc: "Deals with disorders of the nervous system and brain."
-      },
-      {
-        name: "Orthopedics",
-        img: "https://via.placeholder.com/300x200?text=Orthopedics",
-        desc: "Focuses on bones, joints, and muscular disorders."
-      },
-      {
-        name: "Pediatrics",
-        img: "https://via.placeholder.com/300x200?text=Pediatrics",
-        desc: "Provides medical care for infants, children, and adolescents."
-      },
-      {
-        name: "Dermatology",
-        img: "https://via.placeholder.com/300x200?text=Dermatology",
-        desc: "Specializes in skin, hair, and nail disorders."
-      },
-      {
-        name: "Gynecology",
-        img: "https://via.placeholder.com/300x200?text=Gynecology",
-        desc: "Focused on women's health and reproductive systems."
-      },
-      {
-        name: "ENT",
-        img: "https://via.placeholder.com/300x200?text=ENT",
-        desc: "Treats ear, nose, and throat issues and related areas."
-      },
-      {
-        name: "Oncology",
-        img: "https://via.placeholder.com/300x200?text=Oncology",
-        desc: "Dedicated to the diagnosis and treatment of cancer."
-      },
-      {
-        name: "Radiology",
-        img: "https://via.placeholder.com/300x200?text=Radiology",
-        desc: "Uses imaging technology for diagnosis and treatment planning."
-      },
-      {
-        name: "Urology",
-        img: "https://via.placeholder.com/300x200?text=Urology",
-        desc: "Focuses on urinary tract and male reproductive organs."
-      }
-    ];
-    setDepartments(deptData);
-  }, []);
-
+const Department = () => {
   return (
-    <div className="container mt-5 mb-5">
-      <h2 className="text-center text-primary mb-4">Our Departments</h2>
-      <div className="row">
-        {departments.map((dept, index) => (
-          <div key={index} className="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div className="card department-card h-100 shadow-sm">
-              <img src={dept.img} className="card-img-top dept-img" alt={dept.name} />
-              <div className="card-body">
-                <h5 className="card-title text-info">{dept.name}</h5>
-                <p className="card-text">{dept.desc}</p>
+    <>
+      {/* Navbar */}
+      <div style={{ paddingTop: 0 }}>
+      <nav className="navbar" style={{backgroundColor:"#194767"}}>
+        <img
+          src={logo}
+          alt="Hospital Logo"
+          style={{
+            opacity: 0.9,
+            width: "100px",
+            height: "70px",
+            paddingLeft: "20px",
+            borderRadius: "50px",
+          }}
+        />
+        <h1 className="logo" style={{ color: "#3dbbd4", fontSize: "15px", marginTop: 0 }}>
+          <span className="title">TAU HOSPITAL</span>
+          <span className="sub-title">CARE, COMPASSION and CURE</span>
+        </h1>
+        <ul className="nav-links">
+          <input type="checkbox" id="checkbox_toggle" />
+          <label htmlFor="checkbox_toggle" className="hamburger">&#9776;</label>
+          <div className="menu">
+            <li><a href="/">Home</a></li>
+        
+            <li><a href="/departments">Departments</a></li>
+            <li><a href="/doctors">Doctors</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+           
+            <li><a href="/contact">Contact</a></li>
+            <li className="signs">
+              <div className="auth-links">
+              <Link to="/sign-in">Sign In</Link> | <Link to="/sign-up">Sign Up</Link>
               </div>
-            </div>
+              <div className="appointment-link">
+              <Link to="/book-appointment" style={{color:"#3dbbd4"}}>Book Appointment</Link>
+              </div>
+            </li>
           </div>
-        ))}
+        </ul>
+      </nav>
+    
+      </div>
+
+      {/* Departments Section */}
+      <section className="product-container">
+  {departmentData.map((dept, index) => (
+    <div className="product-card" key={index}>
+      <img src={dept.image} alt={dept.title} className="product-image" />
+      <div className="product-details">
+        <h2 className="product-title">{dept.title}</h2>
+        <p className="product-description">{dept.description}</p>
       </div>
     </div>
+  ))}
+</section>
+      {/* Footer */}
+      <div id="contact us">
+        <footer id="footer">
+          <div className="contact-wrap">
+            <div className="contact-in">
+              <h1>Contact Info</h1>
+              <h2><FaPhone /> Phone</h2>
+              <p>044 22516097</p>
+              <h2><FaEnvelope /> Email</h2>
+              <p>planetpulse@democompany.com</p>
+              <h2><FaMapMarkerAlt /> Address</h2>
+              <p>Chennai</p>
+            </div>
+
+            <div className="contact-in">
+              <h1>Send a Message</h1>
+              <form>
+                <input type="text" placeholder="Email" className="contact-in-input" />
+                <textarea placeholder="Message" className="contact-in-textarea"></textarea>
+                <input type="submit" value="SUBMIT" className="contact-in-btn" />
+              </form>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
   );
 };
 
-export default Departments;
+// Department Data
+const departmentData = [
+  {
+    title: 'Emergency Medicine',
+    image: emergencyMedicineImage,
+    description: 'Provides 24/7 immediate care for critical injuries, accidents, and life-threatening conditions with a highly trained response team.',
+  },
+  {
+    title: 'Cardiology',
+    image: cardiologyImage,
+    description: 'Specializes in heart health, offering diagnosis, treatment, and preventive care for heart diseases and conditions.',
+  },
+  {
+    title: 'Neurology',
+    image: neurologyImage,
+    description: 'Focuses on the diagnosis and treatment of brain, spinal cord, and nervous system disorders.',
+  },
+  {
+    title: 'Orthopedics',
+    image: orthopedicsImage,
+    description: 'Treats musculoskeletal issues, including fractures, joint replacements, and sports injuries.',
+  },
+  {
+    title: 'Pediatrics',
+    image: pediatricsImage,
+    description: 'Provides specialized medical care for infants, children, and adolescents.',
+  },
+  {
+    title: 'Gynecology & Obstetrics',
+    image: gynecologyImage,
+    description: 'Provides comprehensive care for women’s health, including pregnancy, childbirth, and reproductive health.',
+  },
+  {
+    title: 'Oncology',
+    image: oncologyImage,
+    description: 'Offers advanced cancer diagnosis, treatment, and support, including chemotherapy, radiation, and surgery.',
+  },
+  {
+    title: 'General Surgery',
+    image: generalSurgeryImage,
+    description: 'Handles a wide range of surgical procedures, from minor to complex surgeries.',
+  },
+];
+
+export default Department;
